@@ -6,8 +6,6 @@ export default () => {
   const [movies, setMovies] = useState([]);
   const [errorMessage, setErrorMessage] = useState();
 
-  console.log(movies);
-
   const getMovies = async () => {
     try {
       const searchParams = new URLSearchParams({ apiKey });
@@ -19,7 +17,6 @@ export default () => {
         );
       }
       const obj = await response.json();
-      console.log(obj.results);
       setMovies(obj.results);
     } catch (error) {
       console.error(errorMessage);
@@ -33,7 +30,7 @@ export default () => {
 
   return (
     <main className="cards-wrapper">
-      {movies.map((m) => (
+      {movies.slice(0, 4).map((m) => (
         <MovieCard
           key={m.id}
           image={`https://image.tmdb.org/t/p/w500${m.poster_path}`}
