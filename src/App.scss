@@ -1,0 +1,92 @@
+#root {
+  margin: 0 auto;
+  padding: 0rem;
+}
+
+.display-none {
+  display: none;
+}
+
+// NAVBAR ----------------------------------------------------------------------
+
+.navbar {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  width: 94%;
+  margin: 0 auto;
+  padding: 1rem 0;
+
+  .nav-left {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .nav-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+    .search-wrapper {
+      position: relative;
+      width: 300px;
+
+      input {
+        width: 100%;
+      }
+
+      .search-btn {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+
+  .nav-right {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+// SIGNIN MODAL ----------------------------------------------------------------------
+
+.sign-in-modal {
+  background-color: rgb(0, 0, 0, 0.8);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .sign-in-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+    background-color: whitesmoke;
+    color: black;
+    position: relative;
+  }
+
+  .close-icon {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+  }
+}
+
+// MOVIE CARDS AND WRAPPERS ----------------------------------------------------------------------
+
+.cards-wrapper {
+  margin: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
