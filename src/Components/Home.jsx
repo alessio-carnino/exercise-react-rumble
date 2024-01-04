@@ -33,9 +33,11 @@ export default () => {
       {movies.slice(0, 4).map((m) => (
         <MovieCard
           key={m.id}
+          id={m.id}
           image={`https://image.tmdb.org/t/p/w500${m.poster_path}`}
           title={m.title}
           year={m.release_date}
+          overview={m.overview}
         />
       ))}
     </main>

@@ -1,7 +1,8 @@
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoMdClose } from "react-icons/io";
-import { CiSearch } from "react-icons/ci";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
+import Searchbar from "./Searchbar";
 
 export default () => {
   let users = [
@@ -44,15 +45,22 @@ export default () => {
         </div>
 
         <div className="nav-center">
-          <div className="search-wrapper">
-            <input type="text" />
-            <CiSearch className="search-btn" />
-          </div>
+          <Searchbar />
         </div>
 
         <div className="nav-right">
           {isLogedin === true ? (
-            <h5>{`Hi ${loginEmail}`}</h5>
+            <>
+              <div>
+                <NavLink to="/" className="navlink">
+                  Home
+                </NavLink>
+                <NavLink to="/about" className="navlink">
+                  About
+                </NavLink>
+              </div>
+              <h5>{`Hi ${loginEmail}`}</h5>
+            </>
           ) : (
             <div className="nav-buttons-wrapper">
               <button
